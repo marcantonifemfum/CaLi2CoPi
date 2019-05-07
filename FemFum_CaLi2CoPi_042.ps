@@ -1,12 +1,12 @@
 %!
 %#  `GNU GPL FemFum CaLi2CoPi v.042´ és una llibreria d'anàlisi de PDF per verificar,
 %#  modificar i reescriure `Portable Document Format´ per mitjà del llenguatge PostScript.
-%#  Per a intèrprets `GNU GPL Ghostscript´ però també, amb ben pocs retocs, pot córrer
+%#  Per a intèrprets `GNU AGPL Ghostscript´ però també, amb ben pocs retocs, pot córrer
 %#  amb l'Adobe Acrobat Distiller (fins hi tot amb MacOSX PSNormalizer Framework/Apple pstopdf).
 %# 
 %#  `Copyleft 2000-2019 :: l'Ametlla de Merola :: Marc Antoni Malagarriga i Picas´
 %#  `<http://www.femfum.com> | <marcantoni@femfum.com>´
-%#  `http://femfumcali2copi.sourceforge.net/´
+%#  `https://github.com/marcantonifemfum/CaLi2CoPi´
 %# 
 %#  Aquest programa és programari lliure: podeu redistribuir-lo i/o modificar-lo
 %#  sota els termes de la Llicència Pública General de GNU publicada per la Free
@@ -23,12 +23,12 @@
 %# 
 %#  `GNU GPL FemFum CaLi2CoPi v0.042´ is a PDF parser library to preflight,
 %#  modify and rewrite the Portable Document Format under PostScript language.
-%#  For `GNU GPL Ghostscript´ interpreter, but also available with minor changes
+%#  For `GNU AGPL Ghostscript´ interpreter, but also available with minor changes
 %#  for Adobe Acrobat Distiller (even for MacOSX PSNormalizer Framework/Apple pstopdf).
 %# 
 %#  `Copyleft 2000-2019 :: l'Ametlla de Merola :: Marc Antoni Malagarriga i Picas´
 %#  `<http://www.femfum.com> | <marcantoni@femfum.com>´
-%#  `http://femfumcali2copi.sourceforge.net/´
+%#  `https://github.com/marcantonifemfum/CaLi2CoPi´
 %# 
 %#  This program is free software: you can redistribute it and/or modify
 %#  it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@
 %% `http://femfumcali2copi.sourceforge.net/ ... /home/persistent/f/fe/femfumcali2copi´
 %% `ftp de femfum.com ... /web/bin/DeuNosEnGuard´
 %% `http://femfumcali2copi.sourceforge.net/htmlcodifont/CaLi2CoPi_codiPSnetiplanxat.html´
-%% repositori GIT `https://sourceforge.net/p/femfumcali2copi/git/ci/master/tree/´
+%% repositori github `https://github.com/marcantonifemfum/CaLi2CoPi´
 
 %#% execució amb GS per línia de comandes
 %# gs -q -dNOSAFER -o re.pdf -sDEVICE=pdfwrite -c .setpdfwrite -f FemFum_CaLi2CoPi_042.ps 
@@ -623,14 +623,18 @@
  %(/Users/femfum/historiaDlaMevaVida/unaPaginaEnBlanc_laHistoriaDeLaMevaVida_154.pdf)
 
 %%IN
-%%MASATS estrats
+%%MASATSencvlct
 %(/Users/femfum/Masats/projecteSumaCapes/2019/caixeti_pla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1117-C.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1132-C.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1214-C.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1413-C.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1522-C.pdf)
-(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C.pdf)
+
+%% test Bbox
+%(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats.pdf)
+(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox.pdf)
 
 %(/Users/femfum/Sites/lletraferits/RFA/A_persp_transp1.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/3p_minim.pdf)
@@ -796,14 +800,18 @@
  %(/Users/femfum/historiaDlaMevaVida/unaPaginaEnBlanc_laHistoriaDeLaMevaVida_154_pla.pdf)
 
 %%OUT
-%%Masats estrats
+%%MASATSencvlct
 %(/Users/femfum/Masats/projecteSumaCapes/2019/caixeti_repla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1117-C_pla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1132-C_pla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1214-C_pla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1413-C_pla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1522-C_pla.pdf)
-(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C_pla.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C_pla.pdf)
+
+%% test Bbox
+%(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17.pdf)
+(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox_.pdf)
 
 %(/Users/femfum/Sites/lletraferits/RFA/A_persp_transp1_pla_lleixes.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/3p_minim_pla.pdf)
@@ -870,7 +878,7 @@
 %# Si a %#% G triem 6, llegirem aquest dígit per saber si de la interfície d'a3copiseny ens ve
 %# el pocessat d'un sol fitxer =0  o el processat d'un directori sencer =1 (ho necessita el .log)
 
-0
+2
 
 
 
@@ -1330,8 +1338,9 @@ false{
 %# 14 :: XRay+ activa una array de materials digitals inversa a la del gatell 13 (aEliminar), de forma que només elimina les imatges (inLine i XObjects), per tal d'inserir-hi una (1) sola imatge XObject (referenciada pel núm. de pàgina) de les que tingui disponibles en un directori d'importació
 %# 15 :: XRay+ elimina lleixes (layers) amb els seus continguts dins l'estructura OC corresponent + Additional Actions /AA de /Page (MASATS)
 %# 16 :: XRay+ cerca i substitució de text dins unes condicions concretes (MASATS)
+%# 17 :: XRay+ %%MASATSencvlct encavalca tots els continguts de pàgina del document, per ordre, damunt la primera de totes 
 
-0
+17
 
 
 
@@ -1622,6 +1631,21 @@ false{
 
  %% 65
  ( >>>> aquesta capa era buida de continguts\n)
+
+ %% 66
+ (\n\n >>>> l'ample del MediaBox supera la tolerància permesa ...pleguem!\n\n\n)
+
+ %% 67
+ (\n\n >>>> l'alt del MediaBox supera la tolerància permesa ...pleguem!\n\n\n)
+
+ %% 68
+ (\n\n >>>> l'ample del CropBox supera la tolerància permesa ...pleguem!\n\n\n)
+
+ %% 69
+ (\n\n >>>> l'alt del CropBox supera la tolerància permesa ...pleguem!\n\n\n)
+
+ %% 70
+ (\n\n ...formats de pàgina i retalladors s'adiuen\n\n)
 ] def
 
 /EnglIsh
@@ -1823,9 +1847,24 @@ false{
 
  %% 65
  ( >>>> layer with empty contents\n)
+
+ %% 66
+ (\n\n >>>> the width MediaBox threshold overflows their limits ...Bye!\n\n\n)
+
+ %% 67
+ (\n\n >>>> the height MediaBox threshold overflows their limits ...Bye!\n\n\n)
+
+ %% 68
+ (\n\n >>>> the width CropBox threshold overflows their limits ...Bye!\n\n\n)
+
+ %% 69
+ (\n\n >>>> the height CropBox threshold overflows their limits ...Bye!\n\n\n)
+
+ %% 70
+ (\n\n ...the Media and Crop boxes are matching\n\n)
 ] def
 
-/lleNguatge 1 def  %% idioma a escollir (0 Catala . 1 Angles/DLL ... )
+/lleNguatge 0 def  %% idioma a escollir (0 Catala . 1 Angles/DLL ... )
 
 {bAbElArrAy lleNguatge get} stopped
 {cAtAlA 0 get print flush EnglIsh 0 get print flush quit}if  %% activem directament l'error d'idioma
@@ -2091,6 +2130,11 @@ dup 1 get
   {  %% 16 XRay + cerca i substitució de text en unes condicions concretes (MASATS)
    aFeGeiX dup length dup /iNSeRT exch def 4 add string
    dup 3 -1 roll 0 exch putinterval dup iNSeRT (~16_) putinterval
+   /aFeGeiX exch def
+  }
+  {  %% 17 XRay + %%MASATSencvlct encavalca tots els continguts de pàgina del document, per ordre, damunt la primera de totes 
+   aFeGeiX dup length dup /iNSeRT exch def 4 add string
+   dup 3 -1 roll 0 exch putinterval dup iNSeRT (~17_) putinterval
    /aFeGeiX exch def
   }
  ]
@@ -4793,6 +4837,8 @@ dup /XRefStm known
        null  %% 13
        null  %% 14
        null  %% 15
+       null  %% 16
+       null  %% 17
       ]
       QueLiFemFer get cvx exec
       exit  %% sortim del forall
@@ -5456,6 +5502,9 @@ FitxerXRay (w) file dup /wFitxerXRay exch def
  {  %% 16 cerca i substitució de text en unes condicons concretes, projecte MASATS
   wFitxerXRay (search and replace text on particular context\015\012) writestring
  }
+ {  %% 17 %%MASATSencvlct encavalca tots els continguts de pàgina del document, per ordre, damunt la primera de totes 
+  wFitxerXRay (overlaps the whole Page Contents, sequentially, over the first one\015\012) writestring
+ }
 ] QueLiFemFer get cvx exec  %% opcio del menu de capçalera
 wFitxerXRay dup (PDF:name:) writestring nomFITX writestring
 wFitxerXRay dup (\015\012PDF:version:) writestring vPDF writestring
@@ -5703,8 +5752,8 @@ wFitxerXRay dup (\015\012PDF:pages:) writestring maxPlana 7 string cvs writestri
    {
     wFitxerXRay dup dup (\015\012PDF:page) writestring araPlana 12 string cvs writestring (:MediaBox:) writestring
    }
-   {
-    QueLiFemFer 2 eq xQuinaArea 2 eq and not %% els dos han de ser vertaders per que no desem les dades del MediaBox a l'XRay
+   {  %% els dos han de ser vertaders per que no desem les dades del MediaBox a l'XRay
+    QueLiFemFer 2 eq xQuinaArea 2 eq and not
     {
      XRay /PeDeEfa get araPlana 12 string cvs get /CropBox ACrop put  %% desem al dic numerat de la pagina
      wFitxerXRay dup dup (\015\012PDF:page) writestring araPlana 12 string cvs writestring (:CropBox:) writestring
@@ -6034,6 +6083,60 @@ wFitxerXRay dup (\015\012PDF:pages:) writestring maxPlana 7 string cvs writestri
 
 %%% a3copiseny ... DESACTIVEM XRAY
 %%}if
+
+%%MASATSencvlct
+%% hi posem el gatell 17?
+%quinaPlana
+%{== ==}forall
+%:17 ENCAVALCA CONTINGUTS
+QueLiFemFer 17 eq
+{
+ %% control dels Bbox
+ /BBtlrnc .5 def  %% valor de tolerància màxima extablerta en comparar MediaBox/CropBox entre les pàgines
+ %% de l'anàlisi d'XRay recuperem els valors de /MediaBox i /CropBox de cadascuna de les pàgines /dPagns
+ XRay /PeDeEfa get dup /dPagns exch def /1 get
+ /MediaBox get aload pop 3 -1 roll sub /suaraY exch def  %% valor inicial d'alt a comparar
+ exch sub /suaraX exch def  %% valor inicial d'ample a comparar
+ 1 1 maxPlana
+ {  %% for de control dels Bbox
+  12 string cvs dup /araPgn exch def dPagns exch get
+  %% alt del MediaBox
+  /MediaBox get aload pop 3 -1 roll sub suaraY sub abs BBtlrnc ge
+  {  %% error alt Media
+   BaBeL 67 get print flush araPgn == stop
+  }
+  { %% ample del MediaBox
+   exch sub suaraX sub abs BBtlrnc ge
+   {  %% error ample Media
+    BaBeL 66 get print flush araPgn == stop
+   }
+   {
+    dPagns araPgn get dup /CropBox known
+    {
+     %% alt del CropBox
+     /CropBox get aload pop 3 -1 roll sub suaraY sub abs BBtlrnc ge
+     {  %% error alt Crop
+      BaBeL 69 get print flush araPgn == stop
+     }
+     {  %% ample del CropBox
+      exch sub suaraX sub abs BBtlrnc ge
+      {  %% error ample Crop
+       BaBeL 68 get print flush araPgn == stop
+      }if
+     }ifelse
+    }
+    {
+     pop
+    }ifelse
+   }ifelse
+  }ifelse 
+ }for  %% de control dels Bbox
+ BaBeL 70 get print flush
+
+
+(arasom%%MASATSencvlct)pstack quit
+}if
+%/17 ENCAVALCA CONTINGUTS
 
 QueLiFemFer 7 eq  %:07 REINSEREIX IMATGES JPEG
 {
@@ -12721,6 +12824,80 @@ CMapIntern not
     /i_BMC 1 def
     /i_BDC 1 def
     /i_EMC 1 def
+   }
+   {  %% 17 %%MASATSencvlct idèntic a reescriptura idem
+    /i_q 1 def
+    /i_Q 1 def
+    /i_cm 1 def
+    /i_i 1 def
+    /i_J 1 def
+    /i_d 1 def
+    /i_j 1 def
+    /i_w 1 def
+    /i_M 1 def
+    /i_gs 1 def
+    /i_g 0 def  %% refet pel repicat idem
+    /i_G 0 def  %% refet pel repicat idem
+    /i_rg 1 def
+    /i_RG 1 def
+    /i_k 1 def
+    /i_K 1 def
+    /i_cs 1 def
+    /i_CS 1 def
+    /i_sc 0 def  %% refet pel repicat idem
+    /i_SC 0 def  %% refet pel repicat idem
+    /i_scn 1 def
+    /i_SCN 1 def
+    /i_ri 1 def
+    /i_m 1 def
+    /i_l 1 def
+    /i_c 1 def
+    /i_v 1 def
+    /i_y 1 def
+    /i_re 1 def
+    /i_h 1 def
+    /i_n 1 def
+    /i_s 1 def
+    /i_S 1 def
+    /i_f 1 def
+    /i_F 1 def
+    /i_f* 1 def
+    /i_b 1 def
+    /i_B 1 def
+    /i_b* 1 def
+    /i_B* 1 def
+    /i_sh 1 def
+    /i_W 1 def
+    /i_W* 1 def
+    /i_Tc 1 def
+    /i_Tw 1 def
+    /i_Tz 1 def
+    /i_TL 1 def
+    /i_Tf 1 def
+    /i_Tr 1 def
+    /i_Ts 1 def
+    /i_BT 1 def
+    /i_ET 1 def
+    /i_Td 1 def
+    /i_TD 1 def
+    /i_Tm 1 def
+    /i_T* 1 def
+    /i_Tj 1 def
+    /i_' 1 def
+    /i_" 1 def
+    /i_TJ 1 def
+    /i_Do 1 def
+    /i_BI 1 def
+    /i_ID 2 def  %% no escrivim a disc el raw de les inLines!
+    /i_d0 1 def
+    /i_d1 1 def
+    /i_BX 1 def
+    /i_EX 1 def
+    /i_BMC 1 def
+    /i_BDC 1 def
+    /i_EMC 1 def
+    /i_MP 1 def
+    /i_DP 1 def
    }
   ] QueLiFemFer get cvx exec
 
@@ -30326,7 +30503,8 @@ sEdAs exch writestring sEdAs 10 write
 %% tal d'unificar tots els streams trencats dels Contents de cada pàgina en 1 de sol
 QueLiFemFer 0 eq  %:00 REESCRIPTURA IDEM
 QueLiFemFer 15 eq  %:15 ELIMINEM LLESQUES
-or
+QueLiFemFer 17 eq  %:17 ENCAVALCA CONTINGUTS
+or or
 xQuinaArea 0 eq  %% volem explicitament reunificar els streams en 1 de sol
 and
 %% QueLiFemFer 6 eq  % ... o que fem el trencaclosques
@@ -30578,6 +30756,7 @@ Aflate
 
 }  %/00 REESCRIPTURA IDEM
    %/15 ELIMINEM LLESQUES
+   %/17 ENCAVALCA CONTINGUTS
 %%%
 %%% HEM D'ESTAR SEGURS QUE FUNCIONA AL 100% %%%
 {
@@ -30594,6 +30773,7 @@ QueLiFemFer 6 ne
 %:09 EXTRAU IMATGES JPEG
 %:10 PREFLIGHT AMB CAPES
 %:12 arbre jeràrquic
+%:17 ENCAVALCA CONTINGUTS
 %% salpassem el reincrustat d'streams si fem el trencaclosques!
 %% doncs d'aquesta manera la primera interpretacio dels operadors de Contents nomes
 %% ens ha de servir per analitzar XRay i la resta de dades d'imatge que necessitem
@@ -30718,6 +30898,7 @@ QueLiFemFer 6 ne
  }ifelse
 
 }if  %% salpassem el reincrustat d'streams si fem el trencaclosques!
+%/17 ENCAVALCA CONTINGUTS
 %/12 arbre jeràrquic
 %/10 PREFLIGHT AMB CAPES
 %/09 EXTRAU IMATGES JPEG
@@ -45321,6 +45502,9 @@ QueLiFemFer 15 eq
     /i_BMC 2 def  %% repicat ídem
     /i_BDC 2 def  %% repicat ídem
     /i_EMC 4 def  %% repicat ídem
+   }
+   {  %% 17 %%MASATSencvlct idèntic a reescriptura idem
+    (sense implementar! ... pleguem!) == stop  %%quit
    }
   ] QueLiFemFer get cvx exec
 
@@ -61764,6 +61948,10 @@ novaDADAv
     [/MASATStreuificaText]  %% 16
     [/MASATSswapText]
    ]
+   [
+    [/MASATSencavalcaContinguts]  %% 17 %%MASATSencvlct
+    [/MASATSoverlapsContents]
+   ]
   ]
   QueLiFemFer get
   lleNguatge get  %% per idioma 
@@ -61982,6 +62170,7 @@ iIDEM null ne
  %:14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
  %:15 ELIMINA LLESQUES
  %:16 cerca i substitució de text
+ %:17 ENCAVALCA CONTINGUTS
 
  %#%43% reescriptura de fitxers
  %# separació de tintes: un PDF de sortida per a cada una de les Tintes
@@ -62007,6 +62196,7 @@ iIDEM null ne
 
 
  {  %% forall de la generacio de PDF (per Tinta, per Dada Variable, reescriptura normal del PDF o cerca i substitució de text)
+%/17 ENCAVALCA CONTINGUTS
 %/16 cerca i substitució de text
 %/15 ELIMINA LLESQUES
 %/14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
@@ -63753,6 +63943,7 @@ iIDEM null ne
 %:13 eliminem continguts de pàgina
 %:14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %:15 ELIMINA LLESQUES
+%:17 ENCAVALCA CONTINGUTS
 
   %% x si queden dics indesitjables q hauriem de polir de l'if de + amunt
   count 1 sub {exch pop}repeat
@@ -63870,6 +64061,7 @@ iIDEM null ne
    iDimoni MaxDimoni eq {exit} if
   }loop  %% de descarrega
 
+%/17 ENCAVALCA CONTINGUTS
 %/15 ELIMINA LLESQUES
 %/14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %/13 eliminem continguts de pàgina
@@ -63919,6 +64111,7 @@ iIDEM null ne
 %:13 eliminem continguts de pàgina
 %:14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %:15 ELMINA LLESQUES
+%:17 ENCAVALCA CONTINGUTS
 
   %#%49% busquem el número del darrer objecte actiu (QuiEsAra) i del primer (elPrimer)
   (%#%49%)==
@@ -64029,6 +64222,10 @@ iIDEM null ne
     (Treu i Fica Text )  %% 16
     (swapping text )
    ]
+   [
+    (Encavalca Continguts )  %% 17 %%MASATSencvlct
+    (overlaps contents )
+   ]
   ]
   QueLiFemFer get  %% text del Subject
   lleNguatge get  %% per idioma
@@ -64116,6 +64313,7 @@ iIDEM null ne
     }loop  %% d'interrogacio dels dicts de COMdimoni
    }if
 
+%/17 ENCAVALCA CONTINGUTS
 %/15 ELIMINA LLESQUES
 %/14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %/13 eliminem continguts de pàgina
@@ -64142,6 +64340,7 @@ iIDEM null ne
 %:13 eliminem continguts de pàgina
 %:14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %:15 ELIMINA LLESQUES
+%:17 ENCAVALCA CONTINGUTS
    QueLiFemFer 8 ne
    {  %% ho modifiquem mentre no fem l'opcio 8 per a JBC
     dup
@@ -64155,6 +64354,7 @@ iIDEM null ne
     <feff00b8002e00b700b400af006000b7002e00b8002e00b700b400a800ab007e>
     put  %% afegim Author
    }if
+%/17 ENCAVALCA CONTINGUTS
 %/15 ELIMINA LLESQUES
 %/14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %/13 eliminem continguts de pàgina
@@ -64181,6 +64381,7 @@ iIDEM null ne
 %:13 eliminem continguts de pàgina
 %:14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %:15 ELIMINA LLESQUES
+%:17 ENCAVALCA CONTINGUTS
 
    %%(***************)pstack quit
    %% Detecta si l'interpret PS duu el recurs %Calendar% (p.e. GS)
@@ -64290,6 +64491,7 @@ iIDEM null ne
   %% llistem el dict Xtest
   %%Fenix {== ==} forall
 
+%/17 ENCAVALCA CONTINGUTS
 %/15 ELIMINA LLESQUES
 %/14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %/13 eliminem continguts de pàgina
@@ -68707,6 +68909,7 @@ QueLiFemFer 12 eq  %:12 arbre jeràrquic
 %:13 eliminem continguts de pàgina
 %:14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %:15 ELIMINA LLESQUES
+%:17 ENCAVALCA CONTINGUTS
 
    %#%54% fitxer on reconstruirem el PDF
    (%#%54%)==
@@ -69253,7 +69456,8 @@ false setglobal
   Objected'Ara fileposition /BOsXr exch def  %% desem el byte offset d'startxref
   Objected'Ara dup (xref) writestring EOL writestring  %% cap de l'xref
 %%+Preparem l'algorisme per què pugui treballar amb subseccions
-true
+%%MASATSencvlct
+false
   {  %% apliquem el resultat de l'anàlisi de subseccions fet (06.04.19) a /Users/femfum/Masats/projecteSumaCapes/breuHistoric.txt
    %% aqui repiquem totXREF a la cua d'Objected'Ara
    TOTxref (r) file
@@ -69412,6 +69616,7 @@ true
   Salva'm restore  %% anellat important x poder eliminar els fitxers aqui sota!
   %% fi de la reescriptura del PDF
 
+%/17 ENCAVALCA CONTINGUTS
 %/15 ELIMINA LLESQUES
 %/14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %/13 eliminem continguts de pàgina
@@ -69529,6 +69734,7 @@ true
 %:13 eliminem continguts de pàgina
 %:14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %:15 ELIMINA LLESQUES
+%:17 ENCAVALCA CONTINGUTS
 
 %#%58% hem canviat l'estratègia i esborrarem els temporals al principi
 %# ara només informarem que hi queden temporals (demanarem a la DLL que acabi de netejar si cal)
@@ -69582,6 +69788,7 @@ QueLiFemFer 6 eq
 %%( ... fitxers PDF\n\n\n) print flush
 %%% fi del treball en massa x A3copiseny
 
+%/17 ENCAVALCA CONTINGUTS
 %/15 ELIMINA LLESQUES
 %/14 restaura les capes d'imatge rasteritzades per CaLi2CoPi 13
 %/13 eliminem continguts de pàgina
