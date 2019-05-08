@@ -633,7 +633,8 @@
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C.pdf)
 
 %% test /Resources
-(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17.pdf)
+(/Users/femfum/Masats/projecteSumaCapes/2019/FAnPaginesBuides.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17.pdf)
 %% test Bbox
 %(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox.pdf)
 
@@ -810,7 +811,9 @@
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1522-C_pla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C_pla.pdf)
 
-(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17_encavalcats.pdf)
+%% test Resources
+(/Users/femfum/Masats/projecteSumaCapes/2019/FAnPaginesBuides_pla.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17_encavalcats.pdf)
 %% test Bbox
 %(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox_.pdf)
 
@@ -1511,7 +1514,7 @@ false{
  (\nMRCT11 Intèrpret PS Desconegut: fes servir AGPL Ghostscript o Adobe Acrobat Distiller\n\n)
 
  %% 25
- (\n\nMRCT12 CaLi2CoPi Només Treballa amb GPL Ghostscript 8 o +\n\n)
+ (\n\nMRCT12 CaLi2CoPi Només Treballa amb AGPL Ghostscript 8 o +\n\n)
 
  %% 26
  (\n\nMRCT13 Capçalera de PDF errònia\n\n)
@@ -1730,7 +1733,7 @@ false{
  (\nMRCT11 Unknown PS Interpreter: try AGPL Ghostscript or Adobe Acrobat Distiller\n\n)
 
  %% 25
- (\n\nMRCT12 CaLi2CoPi Only Works with GPL Ghostscript 8 or +\n\n)
+ (\n\nMRCT12 CaLi2CoPi Only Works with AGPL Ghostscript 8 or +\n\n)
 
  %% 26
  (\n\nMRCT13 Damaged PDF Header\n\n)
@@ -5084,9 +5087,9 @@ dup /Info known
 
     %%dup
     /Producer
-    %% (GNU GPL FemFum CaLi2CoPi ¸.·´¯`·.¸.·´¨«~)  %% WinAnsi no es veu bé als nous Viewers
+    %% (GNU AGPL FemFum CaLi2CoPi ¸.·´¯`·.¸.·´¨«~)  %% WinAnsi no es veu bé als nous Viewers
     %% en Unicode per tal que funcioni bé amb tots els sistemes
-    <feff0047004e0055002000470050004c002000460065006d00460075006d002000430061004c006900320043006f00500069002000b8002e00b700b400af006000b7002e00b8002e00b700b400a800ab007e>
+    <feff0047004e00550020004100470050004c002000460065006d00460075006d002000430061004c006900320043006f00500069002000b8002e00b700b400af006000b7002e00b8002e00b700b400a800ab007e>
     put
     %% /Subject (Tint Separation) put
     exit
@@ -5101,9 +5104,9 @@ dup /Info known
  {  %% encara que seria molt estrany que fos un dic directe ...
   dup /elDicInfo exch def
   %%dup
-  /Producer  %% (GNU GPL FemFum CaLi2CoPi ¸.·´¯`·.¸.·´¨«~)  %% WinAnsi no es veu bé als nous Viewers
+  /Producer  %% (GNU AGPL FemFum CaLi2CoPi ¸.·´¯`·.¸.·´¨«~)  %% WinAnsi no es veu bé als nous Viewers
   %% en Unicode per tal que funcioni bé amb tots els sistemes
-  <feff0047004e0055002000470050004c002000460065006d00460075006d002000430061004c006900320043006f00500069002000b8002e00b700b400af006000b7002e00b8002e00b700b400a800ab007e>
+  <feff0047004e00550020004100470050004c002000460065006d00460075006d002000430061004c006900320043006f00500069002000b8002e00b700b400af006000b7002e00b8002e00b700b400a800ab007e>
   put
   %% /Subject (Tint Separation) put
  } ifelse
@@ -32410,7 +32413,7 @@ QueLiFemFer 17 eq
  %% desem l'array de tots els /Contents a la pàgina 1
  /Contents contentsDnou put
 
- %17e% cal matar tots els objectes /Pages, si n'hi ha més d'un, o sigui, el primer no (l'arrel)
+ %17e% matem tots els objectes /Pages, si n'hi ha més d'un, o sigui, el primer no (l'arrel)
  %% deixant a la primera /Pages l'array /Kids amb només la primera ref ind apuntant a /Page de la 1
  %% i rectificar el comptador /Count a 1
  elPagesNOESFA dup l'arrel undef  %% eliminem l'entrada de l'arrel /Pages
@@ -32435,11 +32438,12 @@ QueLiFemFer 17 eq
    exit
   }if
  }loop  %% d'interrogació dels dicts de COMdimoni
- dup /Count 1 put
+ dup /Count 1 put  %% modifiquem el diccionari
  dup /Kids get 0 1 getinterval /Kids exch put
-% {== ==}forall
-% (arasom%%MASATSencvlct)pstack quit
 
+ %% cal contemplar la possibilitat d'escriure l'ordre d'encavalcat dels fitxers enllaçats al PDF de n pàgines
+ %% via /PieceInfo al /Catalog i dins el diccionari /MRCT_CaLi2CoPi on a la clau /Private podríem desar els noms originals
+ % (arasom%%MASATSencvlct)pstack quit
 }if
 %/17 ENCAVALCA CONTINGUTS
 
@@ -64430,9 +64434,9 @@ iIDEM null ne
   {  %% si no hi ha Info el creem
    /Info << >>
    dup /Producer
-   %% (GNU GPL FemFum CaLi2CoPi ¸.·´¯`·.¸.·´¨«~)  %% WinAnsi no es veu bé als nous Viewers
+   %% (GNU AGPL FemFum CaLi2CoPi ¸.·´¯`·.¸.·´¨«~)  %% WinAnsi no es veu bé als nous Viewers
    %% en Unicode per tal que funcioni bé amb tots els sistemes
-   <feff0047004e0055002000470050004c002000460065006d00460075006d002000430061004c006900320043006f00500069002000b8002e00b700b400af006000b7002e00b8002e00b700b400a800ab007e>
+   <feff0047004e00550020004100470050004c002000460065006d00460075006d002000430061004c006900320043006f00500069002000b8002e00b700b400af006000b7002e00b8002e00b700b400a800ab007e>
    put  %% afegim Producer
    dup
    quinaTinta 128 string cvs dup /amolla exch def length
