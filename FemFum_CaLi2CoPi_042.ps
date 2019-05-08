@@ -1508,7 +1508,7 @@ false{
  (\nReinterpretant els /Contents de nou\n)
 
  %% 24
- (\nMRCT11 Intèrpret PS Desconegut: fes servir GPL Ghostscript o Adobe Acrobat Distiller\n\n)
+ (\nMRCT11 Intèrpret PS Desconegut: fes servir AGPL Ghostscript o Adobe Acrobat Distiller\n\n)
 
  %% 25
  (\n\nMRCT12 CaLi2CoPi Només Treballa amb GPL Ghostscript 8 o +\n\n)
@@ -1646,7 +1646,10 @@ false{
  (\n\n >>>> l'alt del CropBox supera la tolerància permesa ...pleguem!\n\n\n)
 
  %% 70
- (\n\n ...formats de pàgina i retalladors s'adiuen\n\n)
+ (\n\n ...els formats de pàgina i retalladors s'adiuen\n\n)
+
+ %% 71
+ ( ...pleguem!\n\n\n)
 ] def
 
 /EnglIsh
@@ -1724,7 +1727,7 @@ false{
  (\nParsing the /Contents again\n)
 
  %% 24
- (\nMRCT11 Unknown PS Interpreter: try GPL Ghostscript or Adobe Acrobat Distiller\n\n)
+ (\nMRCT11 Unknown PS Interpreter: try AGPL Ghostscript or Adobe Acrobat Distiller\n\n)
 
  %% 25
  (\n\nMRCT12 CaLi2CoPi Only Works with GPL Ghostscript 8 or +\n\n)
@@ -1787,7 +1790,7 @@ false{
  (\n >>>> Type 0 with unsupported CMap or missing Encoding <<<< \n\n\n)
 
  %% 45
- (\n\n >>>> CAN'T find broken images for binding ... bye!\n\n\n)
+ (\n\n >>>> CAN'T find broken images for binding ... Bye!\n\n\n)
 
  %% 46
  (\n\n ... without Form XObjects\n)
@@ -1862,7 +1865,10 @@ false{
  (\n\n >>>> the height CropBox threshold overflows their limits ...Bye!\n\n\n)
 
  %% 70
- (\n\n ...the Media and Crop boxes are matching\n\n)
+ (\n\n ...the all Media and Crop boxes are matching\n\n)
+
+ %% 71
+ ( ...Bye!\n\n\n)
 ] def
 
 /lleNguatge 0 def  %% idioma a escollir (0 Catala . 1 Angles/DLL ... )
@@ -5137,6 +5143,7 @@ l'arrel null eq
 %% d'on ve tota aquesta merda !!!!!!!!
 %%clear
 
+/elPagesNOESFA <<>> dup l'arrel null put def  %% hi desarem totes les ref ind (hi posarem un valor null) dels objectes /Pages
 /quinaPlana <<>> def  %% diccionari on guardarem Num. Pagina / Clau de Pagina
 /cntpa 0 def  %% valor inicial del compta pagines
 
@@ -5174,6 +5181,7 @@ count dup 1 eq
  /atura't exch def /ici 2 def
  {ici -1 roll ici 1 add /ici exch def ici atura't gt {exit} if} loop
 } ifelse
+
 {  %% loop d'espia_PagesTree_2.ps
  count 0 eq {exit} if
  {  %% loop
@@ -5207,6 +5215,7 @@ count dup 1 eq
   dup /Kids known {true}{false}ifelse
  } ifelse  %% nou per controlar pagines (/Pages) que no porten la clau /Type (en fitxers no optimitzats)
  {  %% ifelse
+  elPagesNOESFA laBranca null put  %% hi desem la ref ind del objecte /Pages
   %% son Pages
   pop exch pop
   /Kids get
@@ -5332,8 +5341,8 @@ count dup 1 eq
   {
    exit
   }ifelse
- } loop  %% elimina les marques d'inici d'array acomulades
-} loop  %% fi d'espia_PagesTree_2.ps
+ }loop  %% elimina les marques d'inici d'array acomulades
+}loop  %% fi d'espia_PagesTree_2.ps
 
 quinaPlana length /maxPlana exch def  %% nombre de pagines del document o darrer numero de plana
 
@@ -32196,8 +32205,7 @@ actGina == (3)==
 %% fi de 26
 
 %%MASATSencvlct
-%% hi posem el gatell 17?
-%quinaPlana
+%% hi posem el gatell 17
 %:17 ENCAVALCA CONTINGUTS
 QueLiFemFer 17 eq
 {
@@ -32243,12 +32251,12 @@ QueLiFemFer 17 eq
  }for  %% de control dels Bbox
  BaBeL 70 get print flush
 
- %17b% recollim els /Resources de totes les pàgines, a encavalcar, cap a la pàgina 1
+ %17b% recollim els /Resources de totes les pàgines, a encavalcar
  %% com que les n pàgines estan prèviament normalitzades pel gs, podem ser molt resolutius repicant tots els diccionaris a sac
  %% resurs a recurs, i posant a la llista dels objectes a donar de baixa totes les ref ind intermitges que pengin de cadascun
- %% dels recursos de cadascuna de les pàgines, de moment tot els /Resources existents repicats els desarem aquí...
- /recursosRepicats <<>> def  %% la clau tindrà el nom original i el valor serà un diccionari (inclòs /ProcSet)
-
+ %% dels recursos de cadascuna de les pàgines, i de moment tot els /Resources existents repicats els desarem aquí...
+ /recursosRepicats <<>> def  %% la clau tindrà el nom original del recurs i el valor serà un diccionari (inclòs /ProcSet)
+ %% fins la v1.7 del PDF Reference (TABLE 3.30) hi ha: ExtGState ColorSpace Pattern Shading XObject Font ProcSet Properties
  1 1 maxPlana
  {  %% for pels dics dels /Resources de totes les pàgines
   12 string cvs RSRCS exch get
@@ -32295,31 +32303,142 @@ QueLiFemFer 17 eq
     {  %% el desem de nou
      recursosRepicats 3 1 roll put
     }ifelse
-%%{== ==}forall
-
-(arasom%%MASATSencvlct)pstack quit
-
    }
    {
     dup type /dicttype eq
     {  %% dicttype 
+     recursosRepicats 2 index known  %% el recurs ja existeix?
+     {  %% copiem els diciconaris un dins l'altre
+      recursosRepicats 2 index get copy
+      recursosRepicats 3 1 roll put  %% i tornem a desar-lo
+     }
+     {  %% el desem de nou
+      recursosRepicats 3 1 roll put
+     }ifelse
     }
     {
      dup type /arraytype eq
      {  %% cal només comprovar que sigui només /ProcSet sinó donarem error
       1 index /ProcSet eq
-      {
+      {  %% transformem l'array en claus de diccionari (amb valor null) per facilitar el seu repicat
+       1 dict exch
+       {
+        1 index exch null put
+       }forall
+       recursosRepicats 2 index known  %% el recurs ja existeix?
+       {  %% copiem els diciconaris un dins l'altre
+        recursosRepicats 2 index get copy
+        recursosRepicats 3 1 roll put  %% i tornem a desar-lo
+       }
+       {  %% el desem de nou
+        recursosRepicats 3 1 roll put
+       }ifelse
       }
       {  %% seria una altra cosa sense control i donaríem error
-       == ==
+       == == BaBeL 8 get print flush BaBeL 71 get print flush stop
       }ifelse
      }
      {  %% seria una altra cosa sense control i donaríem error
+      == == BaBeL 8 get print flush BaBeL 71 get print flush stop
      }ifelse
     }ifelse
    }ifelse
   }forall
- }for
+ }for  %% pels dics dels /Resources de totes les pàgines
+
+ %17c% copiem xafant tots els recursos sumats a dic /Resources de la pàgina 1
+ %% refent primer el diccionari /ProcSet com array
+ recursosRepicats dup [ exch /ProcSet get {pop}forall ] /ProcSet exch put 
+ RSRCS (1) recursosRepicats put  %% per si fessim servir RSRCS més endavant
+ quinaPlana (1) get  %% xafem /Resources al diccionari de l'objecte /Page de la 1
+ /aCercar exch def  %% nom amb la ref ind de l'objecte /Page
+ /iDimoni 0 def
+ {  %% loop d'interrogació dels dics de COMdimoni
+  currentdict iDimoni 4 string cvs cvn get
+  dup aCercar known  %% som al diccionari segmentat de pdf on hi ha l'objecte?
+  {
+   aCercar get exit
+  }
+  {
+   pop
+  }ifelse
+  iDimoni 1 add /iDimoni exch def
+  iDimoni MaxDimoni eq
+  {
+   exit
+  }if
+ }loop  %% d'interrogació dels dicts de COMdimoni
+ dup /Resources recursosRepicats put  %% ho desem a l'objecte de la pàgina 1
+
+ %17d% cal posar tots els Continguts de la resta de pàgines dins l'array de /Contents de la pàgina 1
+ dup /Contents get  %% els continguts de la pàgina 1
+ dup type /arraytype ne
+ {  %% si no és una array li posem a dins
+  1 array astore
+ }if
+ /contentsDnou exch def  %% anirem alimentant l'array
+ %% hi afegim els /Contents de la resta de pàgines (de la 2 a la n) concatenant arrays si convé
+ 2 1 maxPlana
+ {  %% for pels /Contents de la 2 a la n
+  12 string cvs quinaPlana exch get
+  /aCercar exch def  %% nom amb la ref ind de l'objecte /Page
+  /iDimoni 0 def
+  {  %% loop d'interrogació dels dics de COMdimoni
+   currentdict iDimoni 4 string cvs cvn get
+   dup aCercar known  %% som al diccionari segmentat de pdf on hi ha l'objecte?
+   {
+    aCercar get exit
+   }
+   {
+    pop
+   }ifelse
+   iDimoni 1 add /iDimoni exch def
+   iDimoni MaxDimoni eq
+   {
+    exit
+   }if
+  }loop  %% d'interrogació dels dicts de COMdimoni
+  /Contents get  %% els continguts de la pàgina
+  dup type /arraytype ne
+  {  %% si no és una array li posem a dins
+   1 array astore
+  }if
+  %% i concatenem
+  contentsDnou dup length dup /araVa exch def 2 index length add array dup 3 -1 roll 0 exch putinterval
+  dup 3 -1 roll araVa exch putinterval /contentsDnou exch def
+ }for  %% pels /Contents de la 2 a la n
+ %% desem l'array de tots els /Contents a la pàgina 1
+ /Contents contentsDnou put
+
+ %17e% cal matar tots els objectes /Pages, si n'hi ha més d'un, o sigui, el primer no (l'arrel)
+ %% deixant a la primera /Pages l'array /Kids amb només la primera ref ind apuntant a /Page de la 1
+ %% i rectificar el comptador /Count a 1
+ elPagesNOESFA dup l'arrel undef  %% eliminem l'entrada de l'arrel /Pages
+ %% perquè tota la resta (si hi són) els posarem a diccionari d'esborrar objectes
+ {
+  OdeBaixa 3 1 roll put
+ }forall
+ l'arrel /aCercar exch def  %% nom amb la ref ind de l'arrel /Pages
+ /iDimoni 0 def
+ {  %% loop d'interrogació dels dics de COMdimoni
+  currentdict iDimoni 4 string cvs cvn get
+  dup aCercar known  %% som al diccionari segmentat de pdf on hi ha l'objecte?
+  {
+   aCercar get exit
+  }
+  {
+   pop
+  }ifelse
+  iDimoni 1 add /iDimoni exch def
+  iDimoni MaxDimoni eq
+  {
+   exit
+  }if
+ }loop  %% d'interrogació dels dicts de COMdimoni
+ dup /Count 1 put
+ dup /Kids get 0 1 getinterval /Kids exch put
+% {== ==}forall
+% (arasom%%MASATSencvlct)pstack quit
 
 }if
 %/17 ENCAVALCA CONTINGUTS
