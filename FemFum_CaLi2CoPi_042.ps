@@ -632,9 +632,10 @@
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1522-C.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C.pdf)
 
+%% test /Resources
+(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17.pdf)
 %% test Bbox
-%(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats.pdf)
-(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox.pdf)
 
 %(/Users/femfum/Sites/lletraferits/RFA/A_persp_transp1.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/3p_minim.pdf)
@@ -809,9 +810,9 @@
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1522-C_pla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C_pla.pdf)
 
+(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17_encavalcats.pdf)
 %% test Bbox
-%(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17.pdf)
-(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox_.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox_.pdf)
 
 %(/Users/femfum/Sites/lletraferits/RFA/A_persp_transp1_pla_lleixes.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/3p_minim_pla.pdf)
@@ -878,7 +879,7 @@
 %# Si a %#% G triem 6, llegirem aquest dígit per saber si de la interfície d'a3copiseny ens ve
 %# el pocessat d'un sol fitxer =0  o el processat d'un directori sencer =1 (ho necessita el .log)
 
-2
+1
 
 
 
@@ -6083,60 +6084,6 @@ wFitxerXRay dup (\015\012PDF:pages:) writestring maxPlana 7 string cvs writestri
 
 %%% a3copiseny ... DESACTIVEM XRAY
 %%}if
-
-%%MASATSencvlct
-%% hi posem el gatell 17?
-%quinaPlana
-%{== ==}forall
-%:17 ENCAVALCA CONTINGUTS
-QueLiFemFer 17 eq
-{
- %% control dels Bbox
- /BBtlrnc .5 def  %% valor de tolerància màxima extablerta en comparar MediaBox/CropBox entre les pàgines
- %% de l'anàlisi d'XRay recuperem els valors de /MediaBox i /CropBox de cadascuna de les pàgines /dPagns
- XRay /PeDeEfa get dup /dPagns exch def /1 get
- /MediaBox get aload pop 3 -1 roll sub /suaraY exch def  %% valor inicial d'alt a comparar
- exch sub /suaraX exch def  %% valor inicial d'ample a comparar
- 1 1 maxPlana
- {  %% for de control dels Bbox
-  12 string cvs dup /araPgn exch def dPagns exch get
-  %% alt del MediaBox
-  /MediaBox get aload pop 3 -1 roll sub suaraY sub abs BBtlrnc ge
-  {  %% error alt Media
-   BaBeL 67 get print flush araPgn == stop
-  }
-  { %% ample del MediaBox
-   exch sub suaraX sub abs BBtlrnc ge
-   {  %% error ample Media
-    BaBeL 66 get print flush araPgn == stop
-   }
-   {
-    dPagns araPgn get dup /CropBox known
-    {
-     %% alt del CropBox
-     /CropBox get aload pop 3 -1 roll sub suaraY sub abs BBtlrnc ge
-     {  %% error alt Crop
-      BaBeL 69 get print flush araPgn == stop
-     }
-     {  %% ample del CropBox
-      exch sub suaraX sub abs BBtlrnc ge
-      {  %% error ample Crop
-       BaBeL 68 get print flush araPgn == stop
-      }if
-     }ifelse
-    }
-    {
-     pop
-    }ifelse
-   }ifelse
-  }ifelse 
- }for  %% de control dels Bbox
- BaBeL 70 get print flush
-
-
-(arasom%%MASATSencvlct)pstack quit
-}if
-%/17 ENCAVALCA CONTINGUTS
 
 QueLiFemFer 7 eq  %:07 REINSEREIX IMATGES JPEG
 {
@@ -32248,6 +32195,135 @@ actGina == (3)==
 } forall %% fi del forall x pagines
 %% fi de 26
 
+%%MASATSencvlct
+%% hi posem el gatell 17?
+%quinaPlana
+%:17 ENCAVALCA CONTINGUTS
+QueLiFemFer 17 eq
+{
+ %17a% control dels Bbox
+ /BBtlrnc .5 def  %% valor de tolerància màxima extablerta en comparar MediaBox/CropBox entre les pàgines
+ %% de l'anàlisi d'XRay recuperem els valors de /MediaBox i /CropBox de cadascuna de les pàgines /dPagns
+ XRay /PeDeEfa get dup /dPagns exch def /1 get
+ /MediaBox get aload pop 3 -1 roll sub /suaraY exch def  %% valor inicial d'alt a comparar
+ exch sub /suaraX exch def  %% valor inicial d'ample a comparar
+ 1 1 maxPlana
+ {  %% for de control dels Bbox
+  12 string cvs dup /araPgn exch def dPagns exch get
+  %% alt del MediaBox
+  /MediaBox get aload pop 3 -1 roll sub suaraY sub abs BBtlrnc ge
+  {  %% error alt Media
+   BaBeL 67 get print flush araPgn == stop
+  }
+  { %% ample del MediaBox
+   exch sub suaraX sub abs BBtlrnc ge
+   {  %% error ample Media
+    BaBeL 66 get print flush araPgn == stop
+   }
+   {
+    dPagns araPgn get dup /CropBox known
+    {
+     %% alt del CropBox
+     /CropBox get aload pop 3 -1 roll sub suaraY sub abs BBtlrnc ge
+     {  %% error alt Crop
+      BaBeL 69 get print flush araPgn == stop
+     }
+     {  %% ample del CropBox
+      exch sub suaraX sub abs BBtlrnc ge
+      {  %% error ample Crop
+       BaBeL 68 get print flush araPgn == stop
+      }if
+     }ifelse
+    }
+    {
+     pop
+    }ifelse
+   }ifelse
+  }ifelse 
+ }for  %% de control dels Bbox
+ BaBeL 70 get print flush
+
+ %17b% recollim els /Resources de totes les pàgines, a encavalcar, cap a la pàgina 1
+ %% com que les n pàgines estan prèviament normalitzades pel gs, podem ser molt resolutius repicant tots els diccionaris a sac
+ %% resurs a recurs, i posant a la llista dels objectes a donar de baixa totes les ref ind intermitges que pengin de cadascun
+ %% dels recursos de cadascuna de les pàgines, de moment tot els /Resources existents repicats els desarem aquí...
+ /recursosRepicats <<>> def  %% la clau tindrà el nom original i el valor serà un diccionari (inclòs /ProcSet)
+
+ 1 1 maxPlana
+ {  %% for pels dics dels /Resources de totes les pàgines
+  12 string cvs RSRCS exch get
+  {  %% forall per cadascun dels recursos d'1 pàgina
+   %% els seus valors poden ser:
+   dup type /nametype eq
+   {  %% es tracta d'un objecte indirecte
+    dup OdeBaixa exch null put  %% a posar a la llista d'eliminar a /OdeBaixa
+    /esProcSet false def  %% gatell per l'excepció
+    1 index /ProcSet eq  %% tret que sigui una ref ind de ProcSet
+    {
+     /esProcSet true def
+    }if
+    %% anem a cercar-ne l'objecte diccionari o array (/ProcSet) per repicar-lo a /recursosRepicats
+    /aCercar exch def  %% nom amb la ref ind del dic Resources
+    /iDimoni 0 def
+    {  %% loop d'interrogació dels dics de COMdimoni
+     currentdict iDimoni 4 string cvs cvn get
+     dup aCercar known  %% som al diccionari segmentat de pdf on hi ha l'objecte?
+     {
+      aCercar get exit
+     }
+     {
+      pop
+     }ifelse
+     iDimoni 1 add /iDimoni exch def
+     iDimoni MaxDimoni eq
+     {
+      exit
+     }if
+    }loop  %% d'interrogació dels dicts de COMdimoni
+    esProcSet
+    {  %% transformem l'array en claus de diccionari (amb valor null) per facilitar el seu repicat
+     1 dict exch
+     {
+      1 index exch null put
+     }forall
+    }if
+    recursosRepicats 2 index known  %% el recurs ja existeix?
+    {  %% copiem els diciconaris un dins l'altre
+     recursosRepicats 2 index get copy
+     recursosRepicats 3 1 roll put  %% i tornem a desar-lo
+    }
+    {  %% el desem de nou
+     recursosRepicats 3 1 roll put
+    }ifelse
+%%{== ==}forall
+
+(arasom%%MASATSencvlct)pstack quit
+
+   }
+   {
+    dup type /dicttype eq
+    {  %% dicttype 
+    }
+    {
+     dup type /arraytype eq
+     {  %% cal només comprovar que sigui només /ProcSet sinó donarem error
+      1 index /ProcSet eq
+      {
+      }
+      {  %% seria una altra cosa sense control i donaríem error
+       == ==
+      }ifelse
+     }
+     {  %% seria una altra cosa sense control i donaríem error
+     }ifelse
+    }ifelse
+   }ifelse
+  }forall
+ }for
+
+}if
+%/17 ENCAVALCA CONTINGUTS
+
 QueLiFemFer 8 eq  %:08 ETIQUETA TEXT
 {
  %#%26bis1% ja hem tractat abans aquest PDF amb el gatell #8?
@@ -32360,7 +32436,7 @@ dup araPlana known  %% per que no hi ha totes les planes?
       dup aCercar known {aCercar get exit}{pop}ifelse
       iDimoni 1 add /iDimoni exch def
       iDimoni MaxDimoni eq {exit} if
-     } loop  %% d'interrogacio dels dicts de COMdimoni
+     }loop  %% d'interrogacio dels dicts de COMdimoni
     }if
     dup /ColorSpace known  %% amb aquest dubte filtrem les imatges ploma (1 bit x pix)
     {
