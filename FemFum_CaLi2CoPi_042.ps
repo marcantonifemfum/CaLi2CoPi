@@ -4,7 +4,7 @@
 %#  Per a intèrprets `GNU AGPL Ghostscript´ però també, amb ben pocs retocs, pot córrer
 %#  amb l'Adobe Acrobat Distiller (fins hi tot amb MacOSX PSNormalizer Framework/Apple pstopdf).
 %# 
-%#  `Copyleft 2000-2019 :: l'Ametlla de Merola :: Marc Antoni Malagarriga i Picas´
+%#  `Copyleft 2000-2021 :: l'Ametlla de Merola :: Marc Antoni Malagarriga i Picas´
 %#  `<http://www.femfum.com> | <marcantoni@femfum.com>´
 %#  `https://github.com/marcantonifemfum/CaLi2CoPi´
 %# 
@@ -26,7 +26,7 @@
 %#  For `GNU AGPL Ghostscript´ interpreter, but also available with minor changes
 %#  for Adobe Acrobat Distiller (even for MacOSX PSNormalizer Framework/Apple pstopdf).
 %# 
-%#  `Copyleft 2000-2019 :: l'Ametlla de Merola :: Marc Antoni Malagarriga i Picas´
+%#  `Copyleft 2000-2021 :: l'Ametlla de Merola :: Marc Antoni Malagarriga i Picas´
 %#  `<http://www.femfum.com> | <marcantoni@femfum.com>´
 %#  `https://github.com/marcantonifemfum/CaLi2CoPi´
 %# 
@@ -54,10 +54,10 @@
 %% `http://femfumcali2copi.sourceforge.net/htmlcodifont/CaLi2CoPi_codiPSnetiplanxat.html´
 %% repositori github `https://github.com/marcantonifemfum/CaLi2CoPi´
 
-%#% execució amb GS per línia de comandes
-%# gs -q -dNOSAFER -o re.pdf -sDEVICE=pdfwrite -c .setpdfwrite -f FemFum_CaLi2CoPi_042.ps 
+%#% execució amb GS per línia de comandes (la comanda "-c .setpdfwrite" ja no és vàlida a gs 9.54)
+%# gs -q -dNOSAFER -o re.pdf -sDEVICE=pdfwrite -f FemFum_CaLi2CoPi_042.ps
 %# escriu els missatges a un .log de sortida però no al Terminal
-%# gs -q -dNOSAFER -sstdout=aviam.log -o re.pdf -sDEVICE=pdfwrite -c .setpdfwrite -f FemFum_CaLi2CoPi_042.ps 
+%# gs -q -dNOSAFER -sstdout=aviam.log -o re.pdf -sDEVICE=pdfwrite -f FemFum_CaLi2CoPi_042.ps 
 %% /home/users/m/ma/marcantoni/userweb/persistent/gs860/bin/gs ... crida al gs de sourceforge
 
 %#%00% Normes d'escriptura a seguir dins el codi per a una gestió de codiPSnetiplanxat_html.ps
@@ -633,13 +633,16 @@
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C.pdf)
 
 %% test /Resources
-(/Users/femfum/Masats/projecteSumaCapes/2019/FAnPaginesBuides.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/encadenats7planols_masats.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/FAnPaginesBuides.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17.pdf)
 %% test Bbox
 %(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox.pdf)
 
-%(/Users/femfum/Sites/lletraferits/RFA/A_persp_transp1.pdf)
-%(/Users/femfum/Masats/projecteSumaCapes/2019/3p_minim.pdf)
+%% xapes llill
+%%(/Users/femfum/CEM/CEM75a/18\ no\ complet/75GLLS/DOSSIER/2019/fa131agulles/xapes/Xapa50mm_ambmarge62mm.pdf)
+%(/Users/femfum/CEM/CEM75a/18\ no\ complet/75GLLS/DOSSIER/2019/logoRodoText_llillpdf.pdf)
+%(/Users/femfum/CEM/CEM75a/18\ no\ complet/75GLLS/DOSSIER/2019/fa131agulles/xapes/banderins/banderiTipus_180x250_senseText.pdf)
 
 %% peta el repicat de subseccions?
 %(/Users/femfum/ArtistesDeLaRepublica/espiguesDor/glifalmapa/JoAcuso/ZGlhcmkganVkaWNpIGRlbW9jcmFjaWEgbnVtZXJvIDE.pdf)
@@ -665,9 +668,36 @@
 %(/Users/femfum/Sarrio_270218/Estructura_Empresarial_Demarcacio_Barcelona_2017_WEB.pdf)
 %(/Users/femfum/Sarrio_270218/Pag7_Estructura_Empresarial_Demarcacio_Barcelona_2017_pla3.pdf)
 %(/Users/femfum/enfony/CaLi2CoPi/Sarrio/problemaDiBaAjMan/2016/EstructuraEmpresarialDemarcacioBarcelona2016.pdf)
+%(/Users/femfum/PliegOS/codi_pliegOS/resultat.pdf)
+
+%(/Users/femfum/PliegOS/codi_pliegOS/resultat_patufet_4up.pdf)
 
 %% sobre lligadures PDF vs lligadures HTML
 %(/Users/femfum/elageminada/GVB.pdf)
+
+%%Aplanats
+%(/Users/femfum/ArtistesDeLaRepublica/espiguesDor/glifalmapa/Vic/llasavic.pdf)
+%(/Users/femfum/expoPicas/textDefinitiuCortines.pdf)
+%(/Users/femfum/expoPicas/credits_lateralDret_pla.pdf)
+%(/Users/femfum/CAPporta.pdf)
+%(/Users/femfum/elageminada/exemples_TaggedPDF/textflow_pdfua1.pdf)
+
+%%XReferenceXobjects
+%(/Users/femfum/JBC/exempleDcridesPDFsofisticades/exemplesDreferenceXObjectsByShradhaBudhiraja/refxob_x5_1pg.pdf)
+%(/Users/femfum/JBC/exempleDcridesPDFsofisticades/exemplesDreferenceXObjectsByShradhaBudhiraja/targetX5.pdf)
+%(/Users/femfum/PliegOS/codi_pliegOS/resultat_2up.pdf)
+%(/Users/femfum/PliegOS/codi_pliegOS/patufet_avuiFa100anys_19200410-23204.pdf)
+
+%%Altres
+%(/Users/femfum/PliegOS/codi_pliegOS/resultat.pdf)
+%(/Users/femfum/calaixDtipus/BunkerType/Brother_HL-L2350DW.pdf)
+%(/Users/femfum/calaixDtipus/BunkerType/Malament.pdf)
+%(/Users/femfum/enfony/enflataGlifs/out.pdf)
+%(/Users/femfum/flck_sense.pdf)
+%(/Users/femfum/ArtistesDeLaRepublica/elTempsDeLesArts/dossier_llill_ArtistesDeLaRepublica.pdf)
+%(/Users/femfum/elageminada/out.pdf)
+%(/Users/femfum/CEM/centenari/pessebres/plantaBibliotecaCasino_zonaExpoPessebres100CEM_3grupsPressebres.pdf)
+(/Users/femfum/represaEnsenyament/AnnexII_trajectoriaProfessional_2005_2021.pdf)
 
 %%ERRORS PER RESOLDRE ENCARA
 
@@ -683,7 +713,8 @@
 %% (/Users/femfum/rar_1441490401.pdf)
 %% (/Users/femfum/rar_1442095201.pdf)
 
-
+%%Gatell 9 (extracció d'imatges)
+%(/Users/femfum/laTaulaDelsSavis/persiana2.pdf)
 
 %%Aquí interpreta i repica bé el text
 
@@ -812,13 +843,16 @@
 %(/Users/femfum/Masats/projecteSumaCapes/2019/FUNA1612-C_pla.pdf)
 
 %% test Resources
-(/Users/femfum/Masats/projecteSumaCapes/2019/FAnPaginesBuides_pla.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/encadenats7planols_masats_encavalcat.pdf)
+%(/Users/femfum/Masats/projecteSumaCapes/2019/FAnPaginesBuides_pla.pdf)
 %(/Users/femfum/Masats/projecteSumaCapes/2019/7planols_masats_pla17_encavalcats.pdf)
 %% test Bbox
 %(/Users/femfum/Masats/projecteSumaCapes/2019/7aplanxar_masats_juguemBbox_.pdf)
 
-%(/Users/femfum/Sites/lletraferits/RFA/A_persp_transp1_pla_lleixes.pdf)
-%(/Users/femfum/Masats/projecteSumaCapes/2019/3p_minim_pla.pdf)
+%% xapes llill
+%% (/Users/femfum/CEM/CEM75a/18\ no\ complet/75GLLS/DOSSIER/2019/fa131agulles/xapes/Xapa50mm_ambmarge62mm_pla.pdf)
+%(/Users/femfum/CEM/CEM75a/18\ no\ complet/75GLLS/DOSSIER/2019/logoRodoText_llillpdf_pla.pdf)
+%(/Users/femfum/CEM/CEM75a/18\ no\ complet/75GLLS/DOSSIER/2019/fa131agulles/xapes/banderins/banderiTipus_180x250_senseText_pla.pdf)
 
 %% peta el repicat de subseccions?
 %% (%#%56%) Error: /rangecheck in --getinterval-- Operand stack:  --nostringval--   --nostringval--   254   36
@@ -844,6 +878,36 @@
 %(/Users/femfum/Sarrio_270218/Estructura_Empresarial_Demarcacio_Barcelona_2017_WEB_pla.pdf)
 %(/Users/femfum/Sarrio_270218/Pag7_Estructura_Empresarial_Demarcacio_Barcelona_2017_optim.pdf)
  %% /301 (BESSONADA 2) (%#%23bis53%) (%#%25%) (%#%26%) MRCT20 This Page don't have /Resources
+%(/Users/femfum/PliegOS/codi_pliegOS/resultat_pla.pdf)
+
+%(/Users/femfum/PliegOS/codi_pliegOS/resultat_patufet_4up_pla.pdf)
+
+%%Aplanats
+%%(/Users/femfum/ArtistesDeLaRepublica/espiguesDor/glifalmapa/Vic/llasavic_pla.pdf)
+%(/Users/femfum/expoPicas/textDefinitiuCortines_pla.pdf)
+%(/Users/femfum/expoPicas/credits_lateralDret_arapla.pdf)
+%(/Users/femfum/CAPporta_pla.pdf)
+%(/Users/femfum/elageminada/onomasticaLdot_valencia_castella_4_5968779449263456802_pla.pdf)
+%(/Users/femfum/elageminada/exemples_TaggedPDF/textflow_pdfua1_pla.pdf)
+% (/Users/femfum/laTaulaDelsSavis/persiana2_ltds.pdf)
+
+%%ReferenceXobjects
+%(/Users/femfum/JBC/exempleDcridesPDFsofisticades/exemplesDreferenceXObjectsByShradhaBudhiraja/refxob_x5_1pg_pla.pdf)
+%(/Users/femfum/JBC/exempleDcridesPDFsofisticades/exemplesDreferenceXObjectsByShradhaBudhiraja/targetX5_pla.pdf)
+%(/Users/femfum/PliegOS/codi_pliegOS/resultat_2up_pla.pdf)
+%(/Users/femfum/PliegOS/codi_pliegOS/patufet_avuiFa100anys_19200410-23204_pla.pdf)
+
+%%Altres
+%(/Users/femfum/PliegOS/codi_pliegOS/resultat_pla.pdf)
+%(/Users/femfum/calaixDtipus/BunkerType/Brother_HL-L2350DW_pla.pdf)
+%(/Users/femfum/calaixDtipus/BunkerType/Malament_pla.pdf)
+%(/Users/femfum/enfony/enflataGlifs/out_pla.pdf)
+%(/Users/femfum/flck_sense_pla.pdf)
+%(/Users/femfum/ArtistesDeLaRepublica/elTempsDeLesArts/dossier_llill_ArtistesDeLaRepublica_pla.pdf)
+%(/Users/femfum/elageminada/out_pla.pdf)
+%(/Users/femfum/CEM/centenari/pessebres/plantaBibliotecaCasino_zonaExpoPessebres100CEM_3grupsPressebres_pla.pdf)
+
+(/Users/femfum/represaEnsenyament/AnnexII_trajectoriaProfessional_2005_2021_pla.pdf)
 
 ]
 %%Fi de Pegues 16
@@ -861,7 +925,7 @@
 %%% GS MacOSX/Unix/Linux %%%
 %%(/enfony/CaLi2CoPi/_CREUS_test036_)
 
-(/Users/femfum/enfony/CaLi2CoPi/_041_)
+(/Users/femfum/enfony/CaLi2CoPi/_042_)
 %(/Users/femfum/Sarrio_270218/_041_)
 
 %%SARRIO
@@ -1343,8 +1407,9 @@ false{
 %# 15 :: XRay+ elimina lleixes (layers) amb els seus continguts dins l'estructura OC corresponent + Additional Actions /AA de /Page (MASATS)
 %# 16 :: XRay+ cerca i substitució de text dins unes condicions concretes (MASATS)
 %# 17 :: XRay+ %%MASATSencvlct encavalca tots els continguts de pàgina del document, per ordre, damunt la primera de totes 
+%# 18 :: Hackovid | pliegO'Maker fa un procés parcial de l'XRay, just per capturar el MediaBox/CropBox de les pàgines i surt
 
-17
+0
 
 
 
@@ -1356,7 +1421,7 @@ false{
 %%(C:/Documents and Settings/L'amo/Escritorio/+PDFs/Logs/)
 
 %%% GS MacOSX/Unix/Linux %%%
-(/Users/femfum/enfony/CaLi2CoPi/XRay_041_)
+(/Users/femfum/enfony/CaLi2CoPi/XRay_042_)
 %(/Users/femfum/Sarrio_270218/XRay_041_)
 %%SARRIO
 %%(/Users/xavier/dadavariable/XRay_037_)
@@ -1900,6 +1965,11 @@ cvx exec
  /FitxerXRay exch def
  %% G triem Que Li Fem Fer
  /QueLiFemFer exch def
+
+%%Hackovid
+%% gatells pel pliegO'Maker
+QueLiFemFer 18 eq {/plgmkr true def /QueLiFemFer 0 def }{/plgmkr false def }ifelse
+
  %% D extrau o reinsereix imatges JPEG
  QueLiFemFer 7 eq
  {  %:07 REINSEREIX IMATGES JPEG
@@ -5522,6 +5592,11 @@ FitxerXRay (w) file dup /wFitxerXRay exch def
 wFitxerXRay dup (PDF:name:) writestring nomFITX writestring
 wFitxerXRay dup (\015\012PDF:version:) writestring vPDF writestring
 wFitxerXRay dup (\015\012PDF:pages:) writestring maxPlana 7 string cvs writestring
+
+%%Hackovid
+/iPmaker 0 def  %% índex per l'array de pàgines
+/aPmaker 0 array def  %% array amb els MediaBox o CropBox de cadascuna de les pàgines
+
 %% aqui escriurem tots els Bbox definits
 /araPlana 1 def  %% valor inicial del ventador de pagines
 {  %% loop explorador d'arees pagina a pagina
@@ -5648,7 +5723,7 @@ wFitxerXRay dup (\015\012PDF:pages:) writestring maxPlana 7 string cvs writestri
    exit
   }if
  } loop  %% recursiu per trobar el MediaBox fins l'arrel /Pages si cal
- 
+
  dup
  /sOrtim false def
  /hihaParent false def
@@ -5860,6 +5935,23 @@ wFitxerXRay dup (\015\012PDF:pages:) writestring maxPlana 7 string cvs writestri
    exit
   }if
  } loop  %% recursiu per trobar el CropBox fins l'arrel /Pages si cal
+
+%%Hackovid
+ %% ens cal desar preferentment el CropBox doncs, en cas de ser-hi, és qui visualment mana
+ XRay /PeDeEfa get araPlana 12 string cvs get dup /CropBox known  %% hi ha CropBox?
+ {
+  /CropBox get
+  %% desem el CropBox a l'array ordenat de pàgines /aPmaker
+  aPmaker dup length 1 add array dup 3 -1 roll 0 exch putinterval dup /aPmaker exch def
+  exch iPmaker exch put
+ }
+ {
+  /MediaBox get
+  %% desem el MediaBox a l'array ordenat de pàgines /aPmaker
+  aPmaker dup length 1 add array dup 3 -1 roll 0 exch putinterval dup /aPmaker exch def
+  exch iPmaker exch put
+ }ifelse 
+
  %% la resta d'arees no son heretables hi per tant han d'anar directes a l'objecte Page
  dup /TrimBox known
  {
@@ -6092,7 +6184,35 @@ wFitxerXRay dup (\015\012PDF:pages:) writestring maxPlana 7 string cvs writestri
   pop
  }ifelse
  araPlana 1 add dup maxPlana gt {pop exit}{/araPlana exch def}ifelse
+
+%%Hackovid
+iPmaker 1 add /iPmaker exch def
+
 } loop  %% fi del loop explorador d'arees pagina a pagina
+
+%%Hackovid
+%% capturaríem la variable d'entorn amb la id úncia del pdf provinent de $PDFunic
+%% i si no hi fos?
+%% aquí cal activar el filtre del nou gatell pel Hackovid
+plgmkr
+{
+ %% ens cal escriure al directori addon_pdf/ l'array dins un .dat únic
+ (aPmaker.dat) (w) file /FaPmaker exch def
+ FaPmaker ([) writestring
+ aPmaker
+ {
+  FaPmaker ([) writestring
+  {
+   128 string cvs FaPmaker exch writestring
+   FaPmaker ( ) writestring
+  }forall
+  FaPmaker (]) writestring
+ }forall
+ FaPmaker dup (]) writestring closefile
+ quit  %% stop? sortim de CaLi2CoPi!
+%% (aPmaker.dat) (r) file cvx exec dup length (Hackovid) pstack quit
+}if
+
 
 %%% a3copiseny ... DESACTIVEM XRAY
 %%}if
@@ -32156,7 +32276,9 @@ actGina == (3)==
        %% descartem que no sigui ni un 'Reference XObject' ni un OPI XObject que voldria dir que es vincula externament a d'altres continguts
        dup /Ref known
        {  %% Reference XObject
-        pop dup XRay /ObjectesX ge araPlana get  %% pesquem el dic de la plana on somt
+%%/Ref get {== ==}forall(::::::)pstack quit  %% hauríem de poder preservar el doble hexadecimal de la ID del pdf referenciat
+%%EP cal afinar aquest detectorID pels PDF amb Reference XObjects, doncs és via ID que s'identifiquen els Proxy
+        pop dup XRay /ObjectesX get araPlana get  %% pesquem el dic de la plana on somt
         /Errades get exch ( Reference XObject Form Not Supported) put undef
        }
        {
@@ -33036,6 +33158,7 @@ userdict /HiHaXObjects true put  %% encenem el gatell q els detecta (ara x 7 i x
            %% descartem que no sigui ni un 'Reference XObject' ni un OPI XObject que voldria dir que es vincula externament a d'altres continguts
            dup /Ref known
            {  %% Reference XObject
+%%EP cal afinar aquest detectorID pels PDF amb Reference XObjects, doncs és via ID que s'identifiquen els Proxy
             pop dup XRay /ObjectesX get araPlana get  %% pesquem el dic de la plana on som
             /Errades get exch ( Reference XObject Form Not Supported) put undef
             /NOninesRusses true def  %% gatell q indica q NO tenim un form recursiu q ens interessi
@@ -69777,6 +69900,8 @@ false
   %%% L'ELIMINEM! doncs hem trobat nous PDF que duen les cadenes no en binari < ... >
   %%% (o sigui hexa que al caure a l'interpret queda en binari) si no en hexa ( ... )
   %%% (doncs a l'estar entre parentesi en comptes de <> es queda igualment en hexa!)
+%%EP cal afinar aquest detectorID pels PDF amb Reference XObjects, doncs és via ID que s'identifiquen els Proxy
+%{== ==}forall(+++)pstack quit
   true {dup /ID undef}if
   dup /ID known 
   {
